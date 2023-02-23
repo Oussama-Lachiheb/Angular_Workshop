@@ -1,0 +1,23 @@
+<h1 class="title">Offres</h1>
+<button class="btn btn-primary" (click)="calculerBilan()"> Bilan </button>
+<div>
+  Nombre d'offres d'emploi non clôturées : {{nbEmploisNonClotures}}
+</div>
+<input type="string" name="entreprise" [(ngModel)]="filtre">
+<div class="row">
+  <div class="col-md-4" *ngFor="let p of listeEmploi,let i=index">
+    <div *ngIf="p.entreprise === filtre || filtre ==''">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Emploi</h5>
+          <p class="card-text"> reference : {{p.reference}}</p>
+          <p class="card-text"> titre : {{p.titre}}</p>
+          <p class="card-text"> entreprise : {{p.entreprise}}</p>
+          <p class="card-text"> etat : {{p.etat}}</p>
+          <button class="btn btn-primary" [disabled]="p.etat==false" >Postuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
