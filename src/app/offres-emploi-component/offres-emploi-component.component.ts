@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Emploi} from "../Core/model/emploi";
+import {Emploi} from "../core/emploi";
 
 @Component({
   selector: 'app-offres-emploi-component',
@@ -8,21 +8,16 @@ import {Emploi} from "../Core/model/emploi";
 })
 export class OffresEmploiComponentComponent implements OnInit {
 
-  listeEmploi!: Emploi[];
-  nbEmploisNonClotures = 0;
-  filtre!: string;
+  listeEmploi : any[] =[
+    {reference:1 , title: 'DevOps', entreprise:'Actia', etat: true},
+    {reference:2 , title: 'Cloud', entreprise:'Telnet', etat: false},
+    {reference:1 , title: 'Web', entreprise:'sagemcom', etat: true}
+  ]
+  chercherParEntreprise!:string;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.listeEmploi=[
-      {reference:"1",titre:"aaa",entreprise:"A",etat:true},
-      {reference:"2",titre:"bbb",entreprise:"B",etat:true},
-      {reference:"3",titre:"ccc",entreprise:"C",etat:false},
-    ]}
-    calculerBilan(){
-      this.nbEmploisNonClotures = this.listeEmploi.filter(emploi => emploi.etat).length;
-
   }
 
 }

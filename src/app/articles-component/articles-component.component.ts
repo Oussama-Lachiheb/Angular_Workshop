@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Article} from "../Core/model/article";
 
 @Component({
   selector: 'app-articles-component',
@@ -7,15 +6,17 @@ import {Article} from "../Core/model/article";
   styleUrls: ['./articles-component.component.css']
 })
 export class ArticlesComponentComponent implements OnInit {
-titre : string ='Les articles du jour'
-  listArticles!: Article[];
+
+  titre:string="Les articles du jour";
+
+  listeArticles :any[]= [
+    {titre: 'Le championnat du monde', contenu:'Le champion du monde de cette année est', auteur:'Med Taher', datee:'12/12/2005', categorie:'Sport'},
+    {titre: 'Les noveaux parents', contenu:'Les noveaux parents', auteur:'Ahmed said', datee:'11/11/2018', categorie:'Education'},
+    {titre: 'Comment ecrire votre cv', contenu:'Pour reussir a decraucher un emploi', auteur:'Marie Elsa', datee:'02/04/2017', categorie:'Travail'}
+  ]
   constructor() { }
 
   ngOnInit(): void {
-    this.listArticles=[
-      { titre : ' Le championnat du monde ' , contenu : ' Le champion du monde de cette année est : ' ,auteur : 'Med Taher' , date : '12 / 12 / 2005 ' , categorie : ' Sport ' } ,
-        { titre : ' Les nouveaux parents ' , contenu : ' Les nouveaux parents' , auteur : ' Ahmed Said ' , date : '11 / 11 / 2018 ' , categorie : ' Education ' } ,
-         { titre : ' Comment écrire votre CV ' , contenu : ' Pour réussir à décraucher un emploi ... ',auteur : ' Marie Elsa ' , date : '02 / 04 / 2017 ' , categorie : ' Travail ' } ]
   }
 
 }

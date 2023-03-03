@@ -5,14 +5,19 @@ import { Injectable } from '@angular/core';
 })
 export class CalculService {
 
-  constructor() { }
-  getNumberOf(list:any[], critiria:string, value:any){
+  constructor() {
+
+
+  }
+  getNumberOf(list:any[], criteria:string, value:any){
     let result=0;
-    for (let i of list){
-      if(i[critiria]===value){
+    for( let i of list){
+      if (i[criteria]===value){
         result++;
       }
     }
     return result;
   }
+
+
 }
